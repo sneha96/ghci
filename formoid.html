@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>New Raw Material</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+<script type= "text/javascript">
+ 
+function func()
+{
+  $("#try").before("<br><div class=\"element-input\" title=\"name of variant\"><label class=\"title\"></label><div class=\"item-cont\"> <input  class=medium type=\"text\" name=\"var_name[]\" placeholder=\"Name of Variant \"/><span class=\"icon-place\"> <input type=\"button\" title=Remove value=\"-\" style=\"font-size:10px;text-align:center;border-radius:80px;background-color:gray\" onclick=\"rmfunc()\" name=rm[]> </span></div></div>");
+  $("#try").before('<div class=element-number title=\"cost per unit\"><input class=short type=number style=\"display:inline;width:33%\" min=0 max=1000 name=cost[] required=required placeholder=Cost /><input title=\"Minimum quantity\" class=short type=number min=0 max=100 style=\"display:inline;width:33%\" name=min_qty[] required=required placeholder=Minimum /><input style="width:33%" title=\"Available quantity\" class=short type=number min=0 max=1000  name=avail_qty[] required=required placeholder=Available />  </span></div>');
+}
+
+//function rmfunc()
+//{ $(#rm).remove();
+//}
+</script>	
+	
+	
+</head>
+<body class="blurBg-false" style="background-color:#EBEBEB">
+
+<link rel="stylesheet" href="formoid_files/formoid1/formoid-solid-blue.css" type="text/css" />
+<script type="text/javascript" src="formoid_files/formoid1/jquery.min.js"></script>
+<form method=post action="add_new_raw.php" class="formoid-solid-blue" style="background-color:#ffffff;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:480px;min-width:150px" method="post"><div class="title"><h2>New Raw Material</h2></div>
+	
+	
+	<div class="element-input" title="Name"><div class="item-cont">
+	<input class="large" type="text" name="name" required="required" placeholder="Name of Raw Material"/><span class="icon-place"></span></div></div>
+	<label class="title"><span class="required">Unit of Measurement : </span></label>
+	
+	<div class="element-select" title="Unit"><div class="item-cont"><div class="large"><span>
+	<select name="unit" required="required">
+		<option value="kilograms">kilograms</option>
+		<option value="litres">litres</option>
+		<option value="metre">metre</option>
+		<option value="per piece">per piece</option>
+		<option value="box">box</option>
+		<option value="dozen">dozen</option>
+		<option value="score">score</option>
+		</select><i></i><span class="icon-place"></span></span></div></div></div>
+	<div class="element-textarea" title="description"><label class="title"></label><div class="item-cont">
+	<textarea class="medium" name="desc" cols="20" rows="5" placeholder="Desciption (If any)"></textarea><span class="icon-place"></span></div></div>
+	
+	<div class="element-number" title="no of variants"><label class="title"></label><div class="item-cont">
+	<input class="large" type="text" min="0" max="100" name="var_no" onchange="myFunc()" placeholder="No of variants" value=""/><span class="icon-place"></span></div></div>
+	<div><input type="button" value="+" style="font-size:10px;text-align:center;border-radius:80px;background-color:gray" onclick="func()"> </div>
+
+	<div class="element-input" id="try"> </div>
+	
+	<div class="submit">
+    <input type="submit" name="submit" value="Submit"/>
+    </div></form>
+	<script type="text/javascript" src="formoid_files/formoid1/formoid-solid-blue.js"></script>
+
+</body>
+</html>
